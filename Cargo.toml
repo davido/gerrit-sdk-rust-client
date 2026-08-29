@@ -1,0 +1,12 @@
+[package]
+name = "gerrit-sdk-rust-client"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Example consumer of the generated Gerrit Rust SDK (gerrit_client)."
+repository = "https://github.com/davido/gerrit-sdk-rust-client"
+
+[dependencies]
+# Reuse the published Gerrit SDK straight from GitHub -- no crates.io, no local
+# checkout. cargo discovers the `gerrit_client` crate via the repo's workspace.
+gerrit_client = { git = "https://github.com/davido/gerrit-sdk-rust.git", package = "gerrit_client", tag = "v3.15.0-SNAPSHOT" }
