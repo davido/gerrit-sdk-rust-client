@@ -180,7 +180,7 @@ dependencies = [
 [[package]]
 name = "gerrit_client"
 version = "3.15.0-snapshot"
-source = "git+https://github.com/davido/gerrit-sdk-rust.git?tag=v3.15.0-SNAPSHOT#3058f82e5d1edd54650735ec57536ec4c768b608"
+source = "git+https://github.com/davido/gerrit-sdk-rust.git?tag=v3.15.0-SNAPSHOT#b6376aeb3b3abcd1240d601ed6a93d72b7a1ef37"
 dependencies = [
  "reqwest",
  "serde",
