@@ -1,0 +1,31 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # The Gerrit SDK generator is Java-based and invoked via npx, so the
+      # upstream SDK build may need both Node and a JDK available on PATH.
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      # Builds the example against its pinned SDK git dependency
+      # (gerrit_client, resolved from GitHub via the tag in Cargo.toml).
+      - name: Build
+        run: cargo build --all-targets --verbose
