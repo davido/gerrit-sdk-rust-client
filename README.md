@@ -2,7 +2,7 @@
 
 An example **consumer** of the generated Gerrit Rust SDK
 ([`davido/gerrit-sdk-rust`](https://github.com/davido/gerrit-sdk-rust)). It fetches
-the SDK **from GitHub** as a cargo git dependency pinned to tag `v3.15.0-SNAPSHOT`
+the SDK **from GitHub** as a cargo git dependency pinned to tag `v3.16.0-SNAPSHOT`
 (mirroring the Gerrit version it was generated from) — no crates.io, no local
 checkout, and **no hand-written request/response types**.
 
@@ -21,11 +21,11 @@ This proves the end-to-end story behind Gerrit issue
 
 ```toml
 [dependencies]
-gerrit_client = { git = "https://github.com/davido/gerrit-sdk-rust.git", package = "gerrit_client", tag = "v3.15.0-SNAPSHOT" }
+gerrit_client = { git = "https://github.com/davido/gerrit-sdk-rust.git", package = "gerrit_client", tag = "v3.16.0-SNAPSHOT" }
 ```
 
-`Cargo.lock` pins the exact published commit. To target a newer Gerrit version,
-point at a newer SDK tag.
+`Cargo.toml` is the source of truth for the pinned tag, and `Cargo.lock` pins the
+exact published commit. To target a newer Gerrit version, point at a newer SDK tag.
 
 ## Two demos
 
