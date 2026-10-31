@@ -21,7 +21,7 @@ This proves the end-to-end story behind Gerrit issue
 
 ```toml
 [dependencies]
-gerrit_client = { git = "https://github.com/davido/gerrit-sdk-rust.git", package = "gerrit_client", tag = "v3.16.0-SNAPSHOT" }
+gerrit_client = { git = "https://github.com/davido/gerrit-sdk-rust.git", package = "gerrit-sdk", tag = "v3.16.0-SNAPSHOT" }
 ```
 
 `Cargo.toml` is the source of truth for the pinned tag, and `Cargo.lock` pins the
